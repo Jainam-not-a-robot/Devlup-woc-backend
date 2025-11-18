@@ -14,7 +14,7 @@ Backend API for Devlup Winter of Code program built with FastAPI and MongoDB.
 
 ```bash
 git clone <repository-url>
-cd Devlup-woc-backend
+cd Devlup-woc-backend/app
 ```
 
 ### 2. Install dependencies
@@ -41,7 +41,7 @@ MONGO_URL=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/
 From the root directory:
 
 ```bash
-uvicorn app.main:app --reload
+uvicorn main:app --reload --port 8001
 ```
 
 Or navigate to the app directory first:
@@ -53,13 +53,12 @@ uvicorn main:app --reload
 
 ### 5. Access the API
 
-- **API Base URL**: http://localhost:8000
-- **Interactive API Docs (Swagger)**: http://localhost:8000/docs
-- **Alternative API Docs (ReDoc)**: http://localhost:8000/redoc
+- **API Base URL**: http://localhost:8001
+- **Interactive API Docs (Swagger)**: http://localhost:8001/docs
 
 ## API Endpoints
 
-Visit http://localhost:8000/docs for complete API documentation with interactive testing.
+Visit http://localhost:8001/docs for complete API documentation with interactive testing.
 
 ## Project Structure
 
@@ -95,7 +94,7 @@ The application uses the following MongoDB collections:
 For production deployment (configured for Heroku):
 
 ```bash
-uvicorn app.main:app --host 0.0.0.0 --port 8000
+uvicorn app.main:app --host 0.0.0.0 --port 8001
 ```
 
 ## Technologies Used

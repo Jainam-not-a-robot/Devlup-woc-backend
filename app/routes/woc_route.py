@@ -141,9 +141,9 @@ async def auth_google(request:Request):
     
     data = {
         "code": code,
-        "client_id": {GOOGLE_CLIENT_ID},
-        "client_secret":{GOOGLE_CLIENT_SECRET},
-        "redirect_uri": {GOOGLE_REDIRECT_URI},
+        "client_id": GOOGLE_CLIENT_ID,
+        "client_secret": GOOGLE_CLIENT_SECRET,
+        "redirect_uri": "postmessage",
         "grant_type": "authorization_code",
         "expires_in": 86400
     }
@@ -201,8 +201,8 @@ async def get_user(
     access_token: Annotated[str | None, Header()] = None,
     refresh_token: Annotated[str | None, Header()] = None): 
     data = {
-        "client_id": {GOOGLE_CLIENT_ID},
-        "client_secret": {GOOGLE_CLIENT_SECRET},
+        "client_id": GOOGLE_CLIENT_ID,
+        "client_secret": GOOGLE_CLIENT_SECRET,
         "refresh_token": refresh_token,
         "grant_type": "refresh_token"
     }

@@ -515,7 +515,8 @@ async def create_project_summary(summary: ProjectSummaryInput):
         "mentors": summary.mentor_name,
         "about":summary.about,
         "linkedin_link": summary.linkedin,
-        "github_link": summary.github
+        "github_link": summary.github,
+        "image_link": summary.image_link
     }
 
     result = collection_projects.insert_one(document)   # Mongo auto _id
@@ -547,7 +548,8 @@ async def get_project_summary():
             "mentor_name": proj.get("mentors", []),
             "about":proj.get("about",[]),
             "linkedin": proj.get("linkedin_link", []),
-            "github": proj.get("github_link", [])
+            "github": proj.get("github_link", []),
+            "image_link":proj.get("image_link",[])
         })
 
     return result

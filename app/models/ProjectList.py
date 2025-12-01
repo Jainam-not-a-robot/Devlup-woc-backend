@@ -7,4 +7,5 @@ class ProjectSummaryInput(BaseModel):
     about: List[str]
     linkedin: List[str]
     github: List[str]
+    image_link:List[str]
 
